@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  color: #222;
+}
+
+.container {
+  width: min(95%, 520px);
+  margin: 40px auto;
+  padding: 28px;
+  text-align: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin: 0 0 10px;
+  color: #243b63;
+}
+
+.container > p {
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  width: 100%;
+  border: 2px solid #263b5c;
+}
+
+.cell {
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 1;
+  border: 1px solid #c5ccd6;
+  border-radius: 0;
+  text-align: center;
+  font-size: 20px;
+  outline: none;
+}
+
+.cell:focus {
+  background: #eaf2ff;
+}
+
+.cell:nth-child(3n) {
+  border-right: 2px solid #263b5c;
+}
+
+.cell:nth-child(n + 19):nth-child(-n + 27),
+.cell:nth-child(n + 46):nth-child(-n + 54) {
+  border-bottom: 2px solid #263b5c;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+button {
+  padding: 11px 25px;
+  border: none;
+  border-radius: 6px;
+  background: #315da8;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #24477f;
+}
+
+button.clear {
+  background: #6c757d;
+}
+
+button.clear:hover {
+  background: #545b62;
+}
+
+.result {
+  margin-top: 18px;
+  font-weight: 600;
+}
